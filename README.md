@@ -4,7 +4,7 @@ This pure-python application allows for two people to communicate securely using
 
 ## How it works
 ### General Outline
-In order to talk to someone, both clients must request to chat with each other so it is impossible to spam a unique ID without them also wanting to chat.
+In order to talk to someone, both clients must request to chat with each other so it is impossible to spam a unique ID without them also requesting to chat.
 
 ### Server.py
 In order for a connection to be made, a computer or server needs to be running the Server.py file. This program facilitates the connections and provides a facade of security, seperating the users and keeping anonymity. The server holds a database of logins, as well as it's public and private keys.
