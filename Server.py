@@ -287,10 +287,12 @@ class Server(Thread):
 
     def setupDatabse(self) -> None:
         '''Sets up the database using sqlite3'''
+        database_exists: bool = path.exists('database.db')
+
         self.conn = sqlite3.connect('database.db', check_same_thread=False)
         self.cursor = self.conn.cursor()
 
-        if not path.exists('database.db'):
+        if not database_exists:
             with self.conn:
                 self.cursor.execute('''CREATE TABLE logins (uid text, salt text,
                 password text, ik_224 text, ik_256 text, ik_384 text, ik_521 text)''')
